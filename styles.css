@@ -255,6 +255,12 @@ a {
   margin: 6vh auto 0;
 }
 
+.about-photo {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
 .about-photo img {
   width: 100%;
   border-radius: 6px;
@@ -585,6 +591,10 @@ a {
   .about-photo {
     max-width: 200px;
     margin: 0 auto;
+  }
+
+  .about-photo .about-extra {
+    display: none;
   }
 
   .gallery-craft {
