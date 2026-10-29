@@ -115,7 +115,7 @@ a {
 .hero {
   position: relative;
   z-index: 1;
-  max-width: var(--max-w);
+  max-width: 968px;
   margin: 0 auto;
   padding: 12vh var(--edge) 10vh;
   text-align: center;
@@ -151,21 +151,39 @@ a {
   color: var(--ember-bright);
 }
 
+/* Headline segments wrap as whole units. script.js hides the "|" on any
+   segment that starts a new line, so separators only appear between
+   segments that share a line, at every screen width. */
 .hero-line {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  row-gap: 4px;
   font-size: clamp(1.05rem, 2.2vw, 1.25rem);
   color: var(--bone);
-  max-width: 720px;
+  max-width: 920px;
   margin: 0 auto 40px;
   line-height: 1.6;
 }
 
 .hero-line .seg {
-  display: inline-block;
+  text-align: center;
+  text-wrap: balance;
 }
 
 .hero-line .sep {
   color: var(--gold, #b08d3f);
-  margin: 0 0.35em;
+  margin: 0 0.6em;
+}
+
+.hero-line .seg.line-start .sep {
+  display: none;
+}
+
+.hero-line .brk {
+  flex-basis: 100%;
+  height: 0;
 }
 
 .hero-actions {
@@ -902,7 +920,5 @@ a {
 }
 
 @media (max-width: 640px) {
-  .hero-line .seg { display: block; }
-  .hero-line .sep { display: none; }
-  .hero-line .seg + .sep + .seg { margin-top: 6px; }
+  .hero-line { row-gap: 6px; }
 }
