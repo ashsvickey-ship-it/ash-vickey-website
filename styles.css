@@ -154,8 +154,18 @@ a {
 .hero-line {
   font-size: clamp(1.05rem, 2.2vw, 1.25rem);
   color: var(--bone);
-  max-width: 560px;
+  max-width: 720px;
   margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+.hero-line .seg {
+  display: inline-block;
+}
+
+.hero-line .sep {
+  color: var(--gold, #b08d3f);
+  margin: 0 0.35em;
 }
 
 .hero-actions {
@@ -889,4 +899,10 @@ a {
   font-size: 0.78rem;
   letter-spacing: 0.02em;
   color: var(--gold);
+}
+
+@media (max-width: 640px) {
+  .hero-line .seg { display: block; }
+  .hero-line .sep { display: none; }
+  .hero-line .seg + .sep + .seg { margin-top: 6px; }
 }
