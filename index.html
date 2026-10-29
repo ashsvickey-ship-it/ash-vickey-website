@@ -271,6 +271,201 @@
 
           </div>
 
+          <figure class="case-artifact">
+            <section class="mci-showcase" aria-label="Milestone Confidence Index case study visuals">
+              <div class="mci-grid">
+
+                <!-- ========================================================
+                     VISUAL 1 — THE INPUT: Slack Pulse Survey
+                     ======================================================== -->
+                <article class="mci-card">
+                  <span class="mci-label">Visual 1: The Input – Slack Pulse Survey</span>
+
+                  <div class="mci-frame">
+                    <div class="mci-frame__bar">
+                      <span class="mci-dot"></span><span class="mci-dot"></span><span class="mci-dot"></span>
+                      <span class="mci-frame__title"># sprint-alignment</span>
+                    </div>
+
+                    <div class="mci-slack">
+                      <!-- Bot avatar -->
+                      <div class="mci-slack__avatar" aria-hidden="true">MCI</div>
+
+                      <div class="mci-slack__body">
+                        <div class="mci-slack__meta">
+                          <span class="mci-slack__name">MCI Alignment Bot</span>
+                          <span class="mci-slack__app">APP</span>
+                          <span class="mci-slack__time">4:02 PM</span>
+                        </div>
+                        <p class="mci-slack__text">Sprint 22 is complete! 🎉 Help us calibrate our alignment.</p>
+
+                        <!-- Survey attachment block -->
+                        <div class="mci-survey">
+                          <p class="mci-survey__q">How confident are you that Sprint 22 deliverables map to the feature's core goals?</p>
+
+                          <fieldset class="mci-scale">
+                            <legend style="position:absolute;left:-9999px;">Confidence rating, 1 to 5</legend>
+                            <div class="mci-scale__options">
+                              <div><input type="radio" name="mci-pulse" id="mci-p1" value="1"><label for="mci-p1">1</label></div>
+                              <div><input type="radio" name="mci-pulse" id="mci-p2" value="2"><label for="mci-p2">2</label></div>
+                              <div><input type="radio" name="mci-pulse" id="mci-p3" value="3"><label for="mci-p3">3</label></div>
+                              <div><input type="radio" name="mci-pulse" id="mci-p4" value="4" checked><label for="mci-p4">4</label></div>
+                              <div><input type="radio" name="mci-pulse" id="mci-p5" value="5"><label for="mci-p5">5</label></div>
+                            </div>
+                            <div class="mci-scale__legend">
+                              <span>Not Confident</span>
+                              <span>Highly Confident</span>
+                            </div>
+                          </fieldset>
+
+                          <button type="button" class="mci-btn">Submit Pulse</button>
+                          <p class="mci-survey__foot">Anonymous · Takes ~10 seconds</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- ========================================================
+                     VISUAL 2 — THE ENGINE: Jira Automation Rule
+                     ======================================================== -->
+                <article class="mci-card">
+                  <span class="mci-label">Visual 2: The Engine – Jira Automation Rule</span>
+
+                  <div class="mci-frame">
+                    <div class="mci-frame__bar">
+                      <span class="mci-dot"></span><span class="mci-dot"></span><span class="mci-dot"></span>
+                      <span class="mci-frame__title">Project settings › Automation</span>
+                    </div>
+
+                    <div class="mci-rule">
+                      <div class="mci-rule__head">
+                        <h3 class="mci-rule__name">MCI Divergence Triage Trigger</h3>
+                        <span class="mci-badge mci-badge--enabled">Enabled</span>
+                      </div>
+
+                      <div class="mci-flow">
+                        <!-- WHEN (trigger) -->
+                        <div class="mci-step mci-step--when">
+                          <div class="mci-step__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                          </div>
+                          <div>
+                            <div class="mci-step__kind">When</div>
+                            <div class="mci-step__title">Webhook received (Zapier)</div>
+                          </div>
+                        </div>
+
+                        <div class="mci-connector"></div>
+
+                        <!-- IF (condition) -->
+                        <div class="mci-condition">
+                          <span class="mci-condition__if">IF</span>
+                          <code>Score &lt; 4.0</code> OR <code>Divergence Delta &gt; 0.5</code>
+                        </div>
+
+                        <div class="mci-connector"></div>
+
+                        <!-- THEN #1 -->
+                        <div class="mci-step mci-step--then">
+                          <div class="mci-step__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M12 8v8M8 12h8"/></svg>
+                          </div>
+                          <div>
+                            <div class="mci-step__kind">Then</div>
+                            <div class="mci-step__title">Create Jira Issue</div>
+                            <div class="mci-step__details">
+                              <span><b>Project:</b> <code>PROD-TRIAGE</code> &nbsp;|&nbsp; <b>Type:</b> Blocker</span>
+                              <span><b>Summary:</b> [MCI ALERT] Sprint 22 Alignment Mismatch</span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="mci-connector"></div>
+
+                        <!-- THEN #2 -->
+                        <div class="mci-step mci-step--then">
+                          <div class="mci-step__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                          </div>
+                          <div>
+                            <div class="mci-step__kind">Then</div>
+                            <div class="mci-step__title">Send Slack Message</div>
+                            <div class="mci-step__details">
+                              <span><b>Channel:</b> <code>#prod-triage</code></span>
+                              <span><b>Message:</b> 🚨 MCI Divergence detected. Auto-assigning to Senior Producer for 15-min triage sync.</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- ========================================================
+                     VISUAL 3 — THE OUTPUT: Confluence Telemetry Dashboard (HERO)
+                     ======================================================== -->
+                <article class="mci-card mci-card--hero">
+                  <span class="mci-label">Visual 3: The Output – Confluence Telemetry Dashboard</span>
+
+                  <div class="mci-frame">
+                    <div class="mci-frame__bar">
+                      <span class="mci-dot"></span><span class="mci-dot"></span><span class="mci-dot"></span>
+                      <span class="mci-frame__title">Production Space › Telemetry</span>
+                    </div>
+
+                    <div class="mci-dash">
+                      <p class="mci-dash__crumb">Production Telemetry / Sprint Reviews</p>
+                      <h2 class="mci-dash__title">Sprint 22: Milestone Confidence Index (MCI)</h2>
+                      <p class="mci-dash__sub">Pulse responses aggregated automatically at sprint close</p>
+
+                      <!-- Top row: KPI cards -->
+                      <div class="mci-kpis">
+                        <div class="mci-kpi mci-kpi--green">
+                          <div class="mci-kpi__label">Internal Dev Alignment</div>
+                          <div class="mci-kpi__value">4.6 <small>/ 5.0</small></div>
+                          <div class="mci-kpi__note">Team feels on track</div>
+                        </div>
+
+                        <div class="mci-kpi mci-kpi--yellow">
+                          <div class="mci-kpi__label">Client Exec Alignment</div>
+                          <div class="mci-kpi__value">3.8 <small>/ 5.0</small></div>
+                          <div class="mci-kpi__note">Below 4.0 threshold</div>
+                        </div>
+
+                        <!-- The card that pops -->
+                        <div class="mci-kpi mci-kpi--red">
+                          <div class="mci-kpi__label">Divergence Delta</div>
+                          <div class="mci-kpi__value">0.8 <span class="mci-kpi__warn" role="img" aria-label="Warning">⚠️</span></div>
+                          <div class="mci-kpi__note">Exceeds 0.5 limit · Triage triggered</div>
+                        </div>
+                      </div>
+
+                      <!-- Bottom row: triage table -->
+                      <h3 class="mci-table-title">Active Triage Tickets <span class="mci-table-count">1</span></h3>
+                      <div class="mci-table-wrap">
+                        <table class="mci-table">
+                          <thead>
+                            <tr><th>Ticket ID</th><th>Summary</th><th>Status</th></tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td><a class="mci-ticket" href="#" onclick="return false;"><span class="mci-ticket__type" aria-hidden="true"></span>PROD-104</a></td>
+                              <td>Sprint 22 Alignment Mismatch</td>
+                              <td><span class="mci-badge mci-badge--review">In Review</span></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+              </div>
+            </section>
+            <figcaption><span>06</span> Artifact — Milestone Confidence Index: Input → Engine → Output</figcaption>
+          </figure>
+
           <p class="build-notes"><span>Build notes</span> v2.0 &middot; status: draft &middot; metrics: under review &middot; confidential details: omitted</p>
         </div>
       </details>
