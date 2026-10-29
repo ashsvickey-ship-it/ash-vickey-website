@@ -62,3 +62,11 @@ if (!prefersReduced && "IntersectionObserver" in window) {
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(schedule);
   window.addEventListener("resize", schedule);
 })();
+
+// Credits: tap/click (or Enter/Space) toggles a card's details; hover is handled in CSS.
+document.querySelectorAll(".credit").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const on = btn.getAttribute("aria-pressed") === "true";
+    btn.setAttribute("aria-pressed", String(!on));
+  });
+});
