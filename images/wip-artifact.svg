@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Work in progress placeholder. Replace with the case study artifact.">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="0%" r="80%">
+      <stop offset="0%" stop-color="#c4432b" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#c4432b" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ede3d3" stroke-opacity="0.06" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="#16121b"/>
+  <rect width="800" height="450" fill="url(#grid)"/>
+  <rect width="800" height="450" fill="url(#glow)"/>
+  <rect x="16" y="16" width="768" height="418" rx="6" fill="none" stroke="#b08d3f" stroke-opacity="0.55" stroke-width="2" stroke-dasharray="10 8"/>
+  <text x="400" y="188" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="16" letter-spacing="5" fill="#b08d3f">ARTIFACT</text>
+  <text x="400" y="248" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="56" font-weight="700" fill="#ede3d3">WIP</text>
+  <text x="400" y="292" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="16" letter-spacing="3" fill="#e8672f">REPLACE ME</text>
+  <text x="400" y="400" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="12" letter-spacing="2" fill="#a89e91">images/wip-artifact.svg</text>
+</svg>
