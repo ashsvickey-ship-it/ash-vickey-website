@@ -93,9 +93,9 @@
     </div>
 
     <p class="portfolio-intro">
-      Four case studies, each a one-page narrative: the challenge, the solution, the
-      outcomes, and how it was built. Select a build to open it. Client and studio
-      details are omitted or generalized for confidentiality.
+      Four case studies, each a one-page narrative from executive summary to technical
+      tooling. Select a build to open it. Client names and internal details are omitted
+      or generalized for confidentiality.
     </p>
 
     <div class="case-list">
@@ -104,8 +104,8 @@
           <span class="v-tag">v1.0</span>
           <span class="case-heading">
             <span class="case-kicker">Case Study 01</span>
-            <span class="case-title">Title pending</span>
-            <span class="case-meta">Role &middot; Context &middot; Year &mdash; pending</span>
+            <span class="case-title">Optimizing the Phase-Gate Pipeline</span>
+            <span class="case-meta">Blizzard Entertainment &middot; Core Feature Team &middot; Game Producer &middot; 2023–2024</span>
           </span>
           <span class="case-chevron" aria-hidden="true"></span>
         </summary>
@@ -114,31 +114,67 @@
           <div class="case-steps">
 
             <section class="case-step">
-              <h3 class="step-label"><span>01</span> The Challenge</h3>
-              <p class="wip">[WIP] What problem or constraint kicked this off? Two or three sentences on the situation, the stakes, and who was affected.</p>
+              <h3 class="step-label"><span>01</span> Executive Summary</h3>
+              <p>Late-stage executive feedback loops on major milestones were causing systemic engineering rework, milestone rejections, and schedule slippage. By completely re-engineering the milestone review pipeline and introducing a proactive “No Surprises” phase-gate model, I drove a 95% first-pass milestone approval rate, drastically minimizing engineering waste and stabilizing team morale.</p>
             </section>
 
             <section class="case-step">
-              <h3 class="step-label"><span>02</span> The Solution</h3>
-              <p class="wip">[WIP] What did you decide, build, or change, and why that approach over the alternatives? Keep it to your role and your calls.</p>
+              <h3 class="step-label"><span>02</span> The Challenge</h3>
+              <p>The studio’s traditional review pipeline allowed creative and executive stakeholders their first comprehensive look at features during final milestone gates. Because technical execution and creative vision had not been continuously aligned upstream, these reviews frequently resulted in major, late-stage design and architectural vetoes. This forced massive, reactionary crunch cycles and compromised codebase stability.</p>
             </section>
 
             <section class="case-step">
-              <h3 class="step-label"><span>03</span> Measurable Outcomes</h3>
-              <div class="metrics">
-                <div class="metric"><span class="metric-value">&mdash;</span><span class="metric-label wip">[WIP] Metric 1, pending</span></div>
-                <div class="metric"><span class="metric-value">&mdash;</span><span class="metric-label wip">[WIP] Metric 2, pending</span></div>
-                <div class="metric"><span class="metric-value">&mdash;</span><span class="metric-label wip">[WIP] Metric 3, pending</span></div>
+              <h3 class="step-label"><span>03</span> Strategic Methodology &amp; Implementation</h3>
+              <ul class="points">
+                <li>
+                  <strong>Deconstruction of Gates:</strong> Broke down the monolithic milestone review into a series of localized, low-fidelity tech-and-design pre-approval gates.
+                </li>
+                <li>
+                  <strong>Upstream Pre-Sign-offs:</strong> Implemented a mandatory pre-review protocol exactly two weeks prior to official gates.
+                </li>
+                <li>
+                  <strong>Grey-Box Hardening:</strong> Mandated that Creative Directors explicitly sign off on wireframes, grey-box technical prototypes, and core architectural layouts before teams committed to production code or final art assets.
+                </li>
+              </ul>
+            </section>
+
+            <section class="case-step">
+              <h3 class="step-label"><span>04</span> Measurable Outcomes</h3>
+              <div class="stat-feature">
+                <span class="stat-number">95%</span>
+                <p><span class="outcome-name">Approval Rate</span>Achieved and sustained a 95% first-pass milestone approval rate across all core feature pipelines.<span class="stat-detail">First-pass approval rate: 89% → 95%</span></p>
               </div>
+              <ul class="outcomes">
+                <li><span class="outcome-name">Rework Reduction</span>Reduced late-stage engineering and art asset rework to near-zero, reclaiming hundreds of productive engineering hours per sprint cycle.</li>
+                <li><span class="outcome-name">Interdisciplinary Synergy</span>Dissolved historic friction between creative leadership and engineering leads by establishing clear, incremental boundaries of ownership.</li>
+              </ul>
             </section>
 
             <section class="case-step">
-              <h3 class="step-label"><span>04</span> Technical Implementation</h3>
-              <p class="wip">[WIP] How it actually worked: the frameworks, tools, pipelines, and processes involved.</p>
+              <h3 class="step-label"><span>05</span> Technical Implementation &amp; Tooling</h3>
+              <ul class="points">
+                <li>
+                  <strong>Jira Workflow Architecture:</strong> Refactored the core Jira workflow scheme for the feature team project from a standard To Do &gt; In Progress &gt; QA &gt; Done structure into a hybrid, hard-gated lifecycle:
+                  <ul>
+                    <li>Concept &gt; Tech Review &gt; Grey-Box Prototype &gt; Production Dev &gt; Polishing &amp; QA &gt; Final Review</li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Jira Workflow Validators &amp; Conditions:</strong> Implemented strict transition validators using Jira Suite Utilities (JSU):
+                  <ul>
+                    <li>To transition a ticket from Grey-Box Prototype to Production Dev, the ticket required an attached link to a verified Confluence page containing explicit sign-offs from both the Creative Director and Technical Director.</li>
+                    <li>Enforced a required field validation: Grey-Box Performance Sign-off (Checkbox) = TRUE.</li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Confluence Page Blueprints:</strong> Standardized a Confluence Template for the “Upstream Pre-Sign-off Matrix.” The template featured a live Jira Issues Filter Macro displaying open architectural dependencies alongside an embedded Miro board displaying wireframes, user flows, and technical layout diagrams directly inside the document.
+                </li>
+              </ul>
               <ul class="log-tags">
-                <li>Tool / system</li>
-                <li>Framework / method</li>
-                <li>Pipeline / process</li>
+                <li>Jira</li>
+                <li>Jira Suite Utilities (JSU)</li>
+                <li>Confluence</li>
+                <li>Miro</li>
               </ul>
             </section>
 
@@ -146,10 +182,10 @@
 
           <figure class="case-artifact">
             <img src="images/wip-artifact.svg" alt="Work-in-progress placeholder for the artifact from this case study" loading="lazy">
-            <figcaption><span>05</span> Artifact &mdash; WIP, replace me</figcaption>
+            <figcaption><span>06</span> Artifact — WIP: visual RACI chart, replace me</figcaption>
           </figure>
 
-          <p class="build-notes"><span>Build notes</span> v1.0 &middot; status: draft &middot; metrics: pending verification &middot; confidential details: omitted</p>
+          <p class="build-notes"><span>Build notes</span> v1.0 &middot; status: draft &middot; metrics: under review &middot; confidential details: omitted</p>
         </div>
       </details>
 
@@ -158,8 +194,8 @@
           <span class="v-tag">v2.0</span>
           <span class="case-heading">
             <span class="case-kicker">Case Study 02</span>
-            <span class="case-title">Title pending</span>
-            <span class="case-meta">Role &middot; Context &middot; Year &mdash; pending</span>
+            <span class="case-title">Quantitative Alignment in Co-Development</span>
+            <span class="case-meta">Wolfjaw Studios &middot; AAA Co-Development Live-Service Title &middot; Senior Technical Producer &middot; 2024–2025</span>
           </span>
           <span class="case-chevron" aria-hidden="true"></span>
         </summary>
@@ -168,31 +204,74 @@
           <div class="case-steps">
 
             <section class="case-step">
-              <h3 class="step-label"><span>01</span> The Challenge</h3>
-              <p class="wip">[WIP] What problem or constraint kicked this off? Two or three sentences on the situation, the stakes, and who was affected.</p>
+              <h3 class="step-label"><span>01</span> Executive Summary</h3>
+              <p>During a high-stakes co-development partnership on a major live-service multiplayer title, a critical visibility gap emerged between the client’s internal team and our internal engineering. To bridge this communication deficit, I designed and executed a data-driven Milestone Confidence Index (MCI) framework. This initiative increased executive alignment by 25%, established predictable feature delivery pipelines, and completely unified cross-studio development goals.</p>
             </section>
 
             <section class="case-step">
-              <h3 class="step-label"><span>02</span> The Solution</h3>
-              <p class="wip">[WIP] What did you decide, build, or change, and why that approach over the alternatives? Keep it to your role and your calls.</p>
+              <h3 class="step-label"><span>02</span> The Challenge</h3>
+              <p>Co-development environments inherently suffer from siloed communication. In this instance, client executives felt detached from engineering bottlenecks, leading them to believe progress was stalling. Concurrently, internal development teams felt that engineering goalposts shifted arbitrarily based on subjective client feedback. This friction began introducing variance into sprint commitments and threatened critical live-service deployment dates.</p>
             </section>
 
             <section class="case-step">
-              <h3 class="step-label"><span>03</span> Measurable Outcomes</h3>
-              <div class="metrics">
-                <div class="metric"><span class="metric-value">&mdash;</span><span class="metric-label wip">[WIP] Metric 1, pending</span></div>
-                <div class="metric"><span class="metric-value">&mdash;</span><span class="metric-label wip">[WIP] Metric 2, pending</span></div>
-                <div class="metric"><span class="metric-value">&mdash;</span><span class="metric-label wip">[WIP] Metric 3, pending</span></div>
+              <h3 class="step-label"><span>03</span> Strategic Methodology &amp; Implementation</h3>
+              <ul class="points">
+                <li>
+                  <strong>Metric Instrumentation:</strong> Engineered a bi-weekly, single-question pulse survey integrated directly into every sprint review.
+                </li>
+                <li>
+                  <strong>The Framework:</strong> Both client executives and internal discipline leads quantified their alignment on a 1–5 scale: “How confident are you that the current sprint/milestone deliverables map to the feature’s goals?”
+                </li>
+                <li>
+                  <strong>Triage Working Agreement:</strong> Ensured continued alignment on the agreed-upon Working Agreement, dictating that any score under a 4 triggered an immediate, mediated 15-minute cross-functional triage sync within 24 hours to isolate and resolve the underlying architectural or creative mismatch.
+                </li>
+              </ul>
+            </section>
+
+            <section class="case-step">
+              <h3 class="step-label"><span>04</span> Measurable Outcomes</h3>
+              <div class="stat-feature">
+                <span class="stat-number">25%</span>
+                <p><span class="outcome-name">Alignment Index</span>Realized a 25% net increase in executive alignment metrics within two quarters.<span class="stat-detail">Average pulse score: 3.2 → 4.0 on the 1–5 scale</span></p>
               </div>
+              <ul class="outcomes">
+                <li><span class="outcome-name">Predictability</span>Stabilized sprint velocity and eliminated unexpected milestone rejections by converting communication health into a trackable, objective engineering data point.</li>
+                <li><span class="outcome-name">Culture Shift &amp; Compassion in Action</span>Created a shared vocabulary that maximized transparency and psychological safety, actively protecting the engineering team from burnout caused by arbitrary, subjective scope shifts.</li>
+              </ul>
             </section>
 
             <section class="case-step">
-              <h3 class="step-label"><span>04</span> Technical Implementation</h3>
-              <p class="wip">[WIP] How it actually worked: the frameworks, tools, pipelines, and processes involved.</p>
+              <h3 class="step-label"><span>05</span> Technical Implementation &amp; Tooling</h3>
+              <ul class="points">
+                <li>
+                  <strong>Survey Automation:</strong> Configured Slack Workflow Builder integrated with Slido to automatically trigger a single-question pulse survey to the external-leads and internal-leads channels exactly 1 hour following every Sprint Review.
+                </li>
+                <li>
+                  <strong>Data Aggregation:</strong> Used a Zapier webhook to automatically parse the survey responses and pipe the raw scores into a Google Sheet.
+                </li>
+                <li>
+                  <strong>Visualization &amp; Telemetry:</strong> Atlassian dashboard embedded directly onto the project’s main Confluence landing page. The dashboard displayed:
+                  <ul>
+                    <li>The MCI Rolling Average</li>
+                    <li>Divergence Delta (A calculation tracking the variance between client executive scores and internal team scores).</li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Jira Automation Triage Trigger:</strong> Set up an automation rule in Jira Cloud:
+                  <ul>
+                    <li>Trigger: When a row is added to the MCI data sheet where Score &lt; 4.0.</li>
+                    <li>Action: Automatically create a high-priority, blocker task in the internal project space titled: [LEAD TRIAGE REQUIRED] - {Sprint.Name} Alignment Mismatch.</li>
+                    <li>Action: Auto-assign to the Senior Producer (myself) and send a priority webhook notification to a dedicated triage Slack channel.</li>
+                  </ul>
+                </li>
+              </ul>
               <ul class="log-tags">
-                <li>Tool / system</li>
-                <li>Framework / method</li>
-                <li>Pipeline / process</li>
+                <li>Slack Workflow Builder</li>
+                <li>Slido</li>
+                <li>Zapier</li>
+                <li>Google Sheets</li>
+                <li>Jira Cloud</li>
+                <li>Confluence</li>
               </ul>
             </section>
 
@@ -200,10 +279,10 @@
 
           <figure class="case-artifact">
             <img src="images/wip-artifact.svg" alt="Work-in-progress placeholder for the artifact from this case study" loading="lazy">
-            <figcaption><span>05</span> Artifact &mdash; WIP, replace me</figcaption>
+            <figcaption><span>06</span> Artifact — WIP, replace me</figcaption>
           </figure>
 
-          <p class="build-notes"><span>Build notes</span> v2.0 &middot; status: draft &middot; metrics: pending verification &middot; confidential details: omitted</p>
+          <p class="build-notes"><span>Build notes</span> v2.0 &middot; status: draft &middot; metrics: under review &middot; confidential details: omitted</p>
         </div>
       </details>
 
@@ -212,8 +291,8 @@
           <span class="v-tag">v3.0</span>
           <span class="case-heading">
             <span class="case-kicker">Case Study 03</span>
-            <span class="case-title">Title pending</span>
-            <span class="case-meta">Role &middot; Context &middot; Year &mdash; pending</span>
+            <span class="case-title">Upstream Risk Mitigation &amp; Scope Governance</span>
+            <span class="case-meta">Wolfjaw Studios &middot; Scope Control &amp; Architectural Planning &middot; Senior Technical Producer &middot; 2024–2025</span>
           </span>
           <span class="case-chevron" aria-hidden="true"></span>
         </summary>
@@ -222,31 +301,64 @@
           <div class="case-steps">
 
             <section class="case-step">
-              <h3 class="step-label"><span>01</span> The Challenge</h3>
-              <p class="wip">[WIP] What problem or constraint kicked this off? Two or three sentences on the situation, the stakes, and who was affected.</p>
+              <h3 class="step-label"><span>01</span> Executive Summary</h3>
+              <p>Uncontrolled, late-stage change requests were introducing severe scope creep and destabilizing sprint delivery. To counter this, I introduced a mandatory upstream Technical Discovery Phase and cross-functional scoping sessions. This governance model successfully reduced late-stage change requests by 40%, protecting the development timeline and mitigating overall project risk.</p>
             </section>
 
             <section class="case-step">
-              <h3 class="step-label"><span>02</span> The Solution</h3>
-              <p class="wip">[WIP] What did you decide, build, or change, and why that approach over the alternatives? Keep it to your role and your calls.</p>
+              <h3 class="step-label"><span>02</span> The Challenge</h3>
+              <p>Client executives frequently introduced “small feature tweaks” late in the production cycle. While seemingly minor from a design perspective, these changes carried massive backend architectural implications, forcing engineering leads to constantly context-switch, alter database schemas on the fly, and compromise code quality to meet existing sprint commitments.</p>
             </section>
 
             <section class="case-step">
-              <h3 class="step-label"><span>03</span> Measurable Outcomes</h3>
-              <div class="metrics">
-                <div class="metric"><span class="metric-value">&mdash;</span><span class="metric-label wip">[WIP] Metric 1, pending</span></div>
-                <div class="metric"><span class="metric-value">&mdash;</span><span class="metric-label wip">[WIP] Metric 2, pending</span></div>
-                <div class="metric"><span class="metric-value">&mdash;</span><span class="metric-label wip">[WIP] Metric 3, pending</span></div>
+              <h3 class="step-label"><span>03</span> Strategic Methodology &amp; Implementation</h3>
+              <ul class="points">
+                <li>
+                  <strong>Upstream Gatekeeper:</strong> Engineered a mandatory, formalized “Technical Discovery Phase” at the absolute inception of any feature proposal.
+                </li>
+                <li>
+                  <strong>Cross-Functional Alignment Workshops:</strong> Instituted collaborative scoping sessions that forced studio executives, client directors, and internal engineering architects into the same room prior to roadmap locking.
+                </li>
+                <li>
+                  <strong>Constraint Modeling:</strong> Leveraged concrete, data-driven visualization tools (performance budgets, memory footprints, and dependency maps) to demonstrate the immediate structural trade-offs of any proposed feature expansion.
+                </li>
+              </ul>
+            </section>
+
+            <section class="case-step">
+              <h3 class="step-label"><span>04</span> Measurable Outcomes</h3>
+              <div class="stat-feature">
+                <span class="stat-number">40%</span>
+                <p><span class="outcome-name">Scope Stabilization</span>Achieved a 40% reduction in late-stage stakeholder change requests, ensuring highly predictable sprint planning.<span class="stat-detail">Late-stage change requests: 54% → ~32% (a 40% relative reduction)</span></p>
               </div>
+              <ul class="outcomes">
+                <li><span class="outcome-name">Risk Mitigation</span>Insulated the core engineering team from disruptive context-switching, directly leading to a more stable build profile and zero last-minute launch crunch.</li>
+                <li><span class="outcome-name">Objective Governance</span>Shifted the studio dynamic from emotional or political negotiation to data-driven, objective decision-making regarding feature viability.</li>
+              </ul>
             </section>
 
             <section class="case-step">
-              <h3 class="step-label"><span>04</span> Technical Implementation</h3>
-              <p class="wip">[WIP] How it actually worked: the frameworks, tools, pipelines, and processes involved.</p>
+              <h3 class="step-label"><span>05</span> Technical Implementation &amp; Tooling</h3>
+              <ul class="points">
+                <li>
+                  <strong>Technical Discovery Matrix Template:</strong> Built a specialized Confluence blueprint that mandated the collection of strict engineering telemetry profiles before a feature could be prioritized for the sprint roadmap. The template included mandatory fields for:
+                  <ul>
+                    <li>Memory Budget Impact (Estimated VRAM and System RAM footprint).</li>
+                    <li>CPU/GPU Performance Impact (Target frame-time cost in milliseconds).</li>
+                    <li>Data Schema Impact (Does this require an alteration to the live player database schema?).</li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Miro Collaborative Scoping Canvas:</strong> Developed a reusable Miro workshop template structured around a classic 2x2 matrix (Value vs. Architectural Complexity). Executive stakeholders used digital sticky notes to pitch features, while technical leads placed pre-calculated “cost weights” on those notes in real-time.
+                </li>
+                <li>
+                  <strong>Advanced Roadmaps for Jira (Portfolio):</strong> Leveraged Advanced Roadmaps to model scope scenarios. When an executive requested a change, the production team plugged the estimated engineering hours into a parallel “Sandbox Scenario” timeline. The tool visually simulated the ripple effect across the roadmap, instantly showing which other downstream client features would be pushed out of the release window if the new change request was approved. This layout was projected live during scoping workshops to visualize the hard trade-offs.
+                </li>
+              </ul>
               <ul class="log-tags">
-                <li>Tool / system</li>
-                <li>Framework / method</li>
-                <li>Pipeline / process</li>
+                <li>Confluence</li>
+                <li>Miro</li>
+                <li>Advanced Roadmaps for Jira</li>
               </ul>
             </section>
 
@@ -254,10 +366,10 @@
 
           <figure class="case-artifact">
             <img src="images/wip-artifact.svg" alt="Work-in-progress placeholder for the artifact from this case study" loading="lazy">
-            <figcaption><span>05</span> Artifact &mdash; WIP, replace me</figcaption>
+            <figcaption><span>06</span> Artifact — WIP, replace me</figcaption>
           </figure>
 
-          <p class="build-notes"><span>Build notes</span> v3.0 &middot; status: draft &middot; metrics: pending verification &middot; confidential details: omitted</p>
+          <p class="build-notes"><span>Build notes</span> v3.0 &middot; status: draft &middot; metrics: under review &middot; confidential details: omitted</p>
         </div>
       </details>
 
@@ -266,8 +378,8 @@
           <span class="v-tag">v4.0</span>
           <span class="case-heading">
             <span class="case-kicker">Case Study 04</span>
-            <span class="case-title">Title pending</span>
-            <span class="case-meta">Role &middot; Context &middot; Year &mdash; pending</span>
+            <span class="case-title">Eliminating Bureaucratic Drag in Feature Delivery</span>
+            <span class="case-meta">Wolfjaw Studios &middot; Cross-Platform Feature Integration &middot; Senior Technical Producer &middot; 2025–2026</span>
           </span>
           <span class="case-chevron" aria-hidden="true"></span>
         </summary>
@@ -276,31 +388,63 @@
           <div class="case-steps">
 
             <section class="case-step">
-              <h3 class="step-label"><span>01</span> The Challenge</h3>
-              <p class="wip">[WIP] What problem or constraint kicked this off? Two or three sentences on the situation, the stakes, and who was affected.</p>
+              <h3 class="step-label"><span>01</span> Executive Summary</h3>
+              <p>In a fast-moving co-development paradigm, asynchronous bureaucratic delays in executive sign-offs were throttling production velocity. By refactoring technical documentation into highly consumable packages and scheduling dedicated asynchronous operational blocks, I cut feature sign-off delays by 30%, accelerated phase-gate velocity, and prevented critical code branch stagnation.</p>
             </section>
 
             <section class="case-step">
-              <h3 class="step-label"><span>02</span> The Solution</h3>
-              <p class="wip">[WIP] What did you decide, build, or change, and why that approach over the alternatives? Keep it to your role and your calls.</p>
+              <h3 class="step-label"><span>02</span> The Challenge</h3>
+              <p>Features passing engineering verification were sitting idle in “Awaiting Director Sign-Off” states for an average of 5 business days, primarily because executives were bottlenecked by dense, 10-page technical design documents. Because co-development codebases move at rapid cadences, these prolonged sign-off delays resulted in severe branch divergence, compounding merge conflicts, and forced developers into frustrating, unproductive waiting periods, harming team morale and momentum.</p>
             </section>
 
             <section class="case-step">
-              <h3 class="step-label"><span>03</span> Measurable Outcomes</h3>
-              <div class="metrics">
-                <div class="metric"><span class="metric-value">&mdash;</span><span class="metric-label wip">[WIP] Metric 1, pending</span></div>
-                <div class="metric"><span class="metric-value">&mdash;</span><span class="metric-label wip">[WIP] Metric 2, pending</span></div>
-                <div class="metric"><span class="metric-value">&mdash;</span><span class="metric-label wip">[WIP] Metric 3, pending</span></div>
+              <h3 class="step-label"><span>03</span> Strategic Methodology &amp; Implementation</h3>
+              <ul class="points">
+                <li>
+                  <strong>Documentation Refactoring:</strong> Replaced exhaustive text-heavy documentation with a strict “Asynchronous Package” requirement. Features were summarized via a 2-minute recorded video demonstration paired with a templated single-page risk/dependency matrix.
+                </li>
+                <li>
+                  <strong>Calendar Architecture:</strong> Standardized and booked dedicated 30-minute “Asynchronous Approval Blocks” directly into stakeholder calendars, eliminating the need for real-time meetings while ensuring dedicated focus.
+                </li>
+                <li>
+                  <strong>Automated Escalation:</strong> Built automated Slack/Jira webhook triggers to alert stakeholders when a feature neared its code-stagnation threshold.
+                </li>
+              </ul>
+            </section>
+
+            <section class="case-step">
+              <h3 class="step-label"><span>04</span> Measurable Outcomes</h3>
+              <div class="stat-feature">
+                <span class="stat-number">30%</span>
+                <p><span class="outcome-name">Velocity Boost</span>Successfully reduced executive sign-off turnaround times by 30%, significantly accelerating overall feature phase-gate velocity.<span class="stat-detail">Average sign-off turnaround: 5 → 3.5 business days</span></p>
               </div>
+              <ul class="outcomes">
+                <li><span class="outcome-name">Codebase Health</span>Drastically minimized branch lifetime, which resulted in a measurable reduction in weekly git merge conflicts and stabilized the continuous integration (CI) pipeline.</li>
+                <li><span class="outcome-name">Operational Efficiency</span>Reclaimed valuable sync time for executives while ensuring developers remained consistently unblocked and focused.</li>
+              </ul>
             </section>
 
             <section class="case-step">
-              <h3 class="step-label"><span>04</span> Technical Implementation</h3>
-              <p class="wip">[WIP] How it actually worked: the frameworks, tools, pipelines, and processes involved.</p>
+              <h3 class="step-label"><span>05</span> Technical Implementation &amp; Tooling</h3>
+              <ul class="points">
+                <li>
+                  <strong>Asynchronous Video Pipeline:</strong> Standardized on Loom for Teams. Engineers and designers used a custom browser/desktop shortcut to record 2-minute feature walkthroughs.
+                </li>
+                <li>
+                  <strong>Jira Smart Fields &amp; Automation:</strong> Added a custom URL field in Jira called ‘Async Demo Link’.
+                  <ul>
+                    <li>An automation rule was established: When an epic transitions to Awaiting Sign-Off, Jira compiles the Async Demo Link, the high-level Risk/Dependency Matrix custom text field, and the main architectural impact notes.</li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Git Branch Decay Tracking:</strong> Integrated GitKraken into our delivery metrics to measure Branch Age and Pull Request Pickup Time. If a branch remained unmerged for more than 72 hours due to a missing sign-off, an automated alert pinged a dedicated escalations Slack channel with the exact cost of the potential merge conflict based on lines of code changed.
+                </li>
+              </ul>
               <ul class="log-tags">
-                <li>Tool / system</li>
-                <li>Framework / method</li>
-                <li>Pipeline / process</li>
+                <li>Loom</li>
+                <li>Jira</li>
+                <li>GitKraken</li>
+                <li>Slack</li>
               </ul>
             </section>
 
@@ -308,10 +452,10 @@
 
           <figure class="case-artifact">
             <img src="images/wip-artifact.svg" alt="Work-in-progress placeholder for the artifact from this case study" loading="lazy">
-            <figcaption><span>05</span> Artifact &mdash; WIP, replace me</figcaption>
+            <figcaption><span>06</span> Artifact — WIP, replace me</figcaption>
           </figure>
 
-          <p class="build-notes"><span>Build notes</span> v4.0 &middot; status: draft &middot; metrics: pending verification &middot; confidential details: omitted</p>
+          <p class="build-notes"><span>Build notes</span> v4.0 &middot; status: draft &middot; metrics: under review &middot; confidential details: omitted</p>
         </div>
       </details>
     </div>

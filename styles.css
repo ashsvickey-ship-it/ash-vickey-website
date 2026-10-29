@@ -768,3 +768,125 @@ a {
   .metrics { grid-template-columns: 1fr; }
   .portfolio-intro { margin-top: -32px; }
 }
+
+/* ---------------------------------------------
+   Case study content: lists and outcomes
+--------------------------------------------- */
+.points {
+  list-style: none;
+  margin: 0 0 14px;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.points > li {
+  position: relative;
+  padding-left: 20px;
+  color: var(--bone-dim);
+}
+
+.points > li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.62em;
+  width: 6px;
+  height: 6px;
+  background: var(--ember);
+  transform: rotate(45deg);
+}
+
+.points strong {
+  color: var(--bone);
+  font-weight: 600;
+}
+
+.points ul {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.points ul li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 0.94rem;
+}
+
+.points ul li::before {
+  content: "\2013";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+}
+
+.stat-feature {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 14px;
+  padding: 18px 20px;
+  border: 1px solid rgba(196, 67, 43, 0.35);
+  border-radius: 4px;
+  background: rgba(14, 11, 18, 0.5);
+}
+
+.stat-feature p {
+  margin: 0;
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--gold);
+}
+
+.outcome-name {
+  display: block;
+  margin-bottom: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ember-bright);
+}
+
+.outcomes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.outcomes li {
+  padding-left: 14px;
+  border-left: 2px solid var(--hairline);
+  color: var(--bone-dim);
+}
+
+.outcomes .outcome-name {
+  color: var(--gold);
+}
+
+@media (max-width: 640px) {
+  .stat-feature {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+.stat-detail {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  color: var(--gold);
+}
