@@ -1289,7 +1289,7 @@ a {
   position: relative;
   display: block;
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1 / 1;
   padding: 0;
   border: 1px solid var(--hairline);
   border-radius: 6px;
@@ -1382,3 +1382,6 @@ a {
   .site-nav { flex-wrap: wrap; justify-content: flex-end; gap: 8px 14px; }
   .site-nav a { white-space: nowrap; }
 }
+
+.credit-front { background: var(--art-bg, var(--void-raised)); }
+.credit-front.is-contain img { object-fit: contain; padding: 8%; }
