@@ -1385,3 +1385,137 @@ a {
 
 .credit-front { background: var(--art-bg, var(--void-raised)); }
 .credit-front.is-contain img { object-fit: contain; padding: 8%; }
+
+
+/* ---------------------------------------------
+   Announcement banner
+--------------------------------------------- */
+.announce {
+  position: relative;
+  z-index: 3;
+  background: linear-gradient(90deg, rgba(196, 67, 43, 0.14), rgba(22, 18, 27, 0.9) 50%, rgba(145, 70, 255, 0.10));
+  border-bottom: 1px solid rgba(196, 67, 43, 0.35);
+}
+
+.announce-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 12px var(--edge);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  text-align: center;
+}
+
+.announce-tag {
+  font-size: 0.72rem;
+  padding: 3px 7px;
+}
+
+.announce-text {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--bone);
+}
+
+.announce-text strong {
+  font-weight: 600;
+  color: var(--bone);
+}
+
+.announce-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-right: 6px;
+}
+
+.announce-sep {
+  color: var(--gold);
+  margin: 0 0.35em;
+}
+
+.announce-link {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--ember-bright);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(232, 103, 47, 0.4);
+  padding-bottom: 1px;
+  white-space: nowrap;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.announce-link:hover {
+  color: var(--bone);
+  border-color: var(--bone);
+}
+
+@media (max-width: 640px) {
+  .announce-inner { gap: 8px 12px; }
+  .announce-text { font-size: 0.86rem; flex-basis: 100%; }
+}
+
+/* ---------------------------------------------
+   Writing
+--------------------------------------------- */
+.writing {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 10vh var(--edge);
+  border-top: 1px solid var(--hairline);
+}
+
+.writing .section-head { margin-bottom: 40px; }
+
+.post-card {
+  display: block;
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 26px 28px;
+  background: var(--void-raised);
+  border: 1px solid var(--hairline);
+  border-left: 3px solid var(--ember);
+  border-radius: 6px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s ease, transform 0.15s ease;
+}
+
+a.post-card:hover {
+  border-color: rgba(232, 103, 47, 0.5);
+  border-left-color: var(--ember-bright);
+  transform: translateY(-2px);
+}
+
+.post-meta {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.is-upcoming .post-status { color: var(--bone-dim); }
+
+.post-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.35rem;
+  margin: 0 0 10px;
+}
+
+.post-desc {
+  margin: 0;
+  color: var(--bone-dim);
+  font-size: 0.98rem;
+}
